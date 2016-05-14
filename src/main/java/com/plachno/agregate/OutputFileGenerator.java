@@ -7,7 +7,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Krzysztof Płachno on 2016-05-01.
@@ -33,7 +36,7 @@ public class OutputFileGenerator {
         File output = new File("e4AgregatedData.csv");
         PrintWriter pw = new PrintWriter(new FileWriter(output));
 
-        printHeader(pw, functionsMap.keySet());
+        printHeader(pw, functionsMap.keySet(), tagsList!=null);
 
         for(double currentTimeStamp = start; currentTimeStamp<stop; currentTimeStamp+=step){
             pw.printf(Locale.US, "%f", currentTimeStamp);
@@ -59,10 +62,13 @@ public class OutputFileGenerator {
         return;
     }
 
-    private void printHeader(PrintWriter pw, Set<TypeOfSource> typesOfFiles) {
+    private void printHeader(PrintWriter pw, Set<TypeOfSource> typesOfFiles, boolean printTagsHeader) {
         pw.print("timestamp");
         for (TypeOfSource typesOfFile : typesOfFiles) {
             pw.print(";" + typesOfFile.getName());
+        }
+        if(printTagsHeader){
+            pw.print(";" + TypeOfSource.TAGS);
         }
         pw.println();
     }

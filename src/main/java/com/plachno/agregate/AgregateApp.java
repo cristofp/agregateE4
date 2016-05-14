@@ -28,6 +28,7 @@ public class AgregateApp {
 
         OutputFileGenerator outputFileGenerator = new OutputFileGenerator(configuration.getFrequency(), functionsMap, tagsMap);
         outputFileGenerator.generateFile();
+        System.out.println("Outpur file generated sucessfully");
 
     }
 
