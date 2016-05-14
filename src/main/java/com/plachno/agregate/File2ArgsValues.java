@@ -17,7 +17,7 @@ public class File2ArgsValues {
         LineIterator lineIterator = FileUtils.lineIterator(file);
 
         while (lineIterator.hasNext()){
-            String[] split = lineIterator.nextLine().split(",");
+            String[] split = lineIterator.nextLine().split(";");
             args.add(Double.parseDouble(split[0]));
             values.add(Double.parseDouble(split[1]));
         }

@@ -39,7 +39,7 @@ public class AgregateApp {
         LineIterator lineIterator = FileUtils.lineIterator(configuration.getTags().toFile());
 
         while (lineIterator.hasNext()){
-            String[] split = lineIterator.nextLine().split(",");
+            String[] split = lineIterator.nextLine().split(";");
             tagsList.addLast( new Pair<Double, String>(Double.parseDouble(split[0]), split[1]));
         }
         return tagsList;

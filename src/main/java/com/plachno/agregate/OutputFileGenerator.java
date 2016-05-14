@@ -38,9 +38,9 @@ public class OutputFileGenerator {
         for(double currentTimeStamp = start; currentTimeStamp<stop; currentTimeStamp+=step){
             pw.printf(Locale.US, "%f", currentTimeStamp);
             for (PolynomialSplineFunction function : functionsMap.values()) {
-                pw.print("," + function.value(currentTimeStamp));
+                pw.print(";" + function.value(currentTimeStamp));
             }
-            pw.print(",");
+            pw.print(";");
             printTagIfPresent(pw,currentTimeStamp, step, tagsList);
             pw.println();
         }
@@ -62,7 +62,7 @@ public class OutputFileGenerator {
     private void printHeader(PrintWriter pw, Set<TypeOfSource> typesOfFiles) {
         pw.print("timestamp");
         for (TypeOfSource typesOfFile : typesOfFiles) {
-            pw.print("," + typesOfFile.getName());
+            pw.print(";" + typesOfFile.getName());
         }
         pw.println();
     }
