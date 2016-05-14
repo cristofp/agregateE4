@@ -1,0 +1,30 @@
+{
+  "frequency": "8.0",
+  "acc_x": {
+    "file": "ACC_X_TS.csv"
+  },
+  "acc_y": {
+    "file": "ACC_Y_TS.csv"
+  },
+  "acc_z": {
+    "file": "ACC_Z_TS.csv"
+  },
+  "bvb": {
+    "file": "BVB_TS.csv"
+  },
+  "eda": {
+    "file": "EDA_TS.csv"
+  },
+  "hr": {
+    "file": "HR_TS.csv"
+  },
+  "ibi": {
+    "file": "IBI_TS.csv"
+  },
+  "temp": {
+    "file": "TEMP_TS.csv"
+  },
+  "tags": {
+    "file": "TAGS_TS.csv"
+  }
+}
